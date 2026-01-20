@@ -2,7 +2,7 @@
 
 <h1 align="center">
 <a href="https://www.google.com/search?q=https://git.io/typing-svg">
-<img src="https://www.google.com/search?q=https://readme-typing-svg.herokuapp.com%3Ffont%3DJetBrains%2BMono%26weight%3D700%26size%3D28%26pause%3D1000%26color%3DF7F7F7%26center%3Dtrue%26vCenter%3Dtrue%26width%3D500%26lines%3DSystem%2BOnline...%3BTarget:%2BHigh-Performance%2BCode%3BProject:%2BThe%2BSector%2B(GMod)%3BBuilding%2BDigital%2BInfrastructures" alt="Typing SVG" />
+<img src="https://www.google.com/search?q=https://readme-typing-svg.herokuapp.com%3Ffont%3DJetBrains%2BMono%26weight%3D700%26size%3D28%26pause%3D1000%26color%3DF7F7F7%26center%3Dtrue%26vCenter%3Dtrue%26width%3D500%26lines%3DFull%2BStack%2BDeveloper%3BBuilding%2BScalable%2BWeb%2BApps%3BClean%2BCode%2B%2526%2BArchitecture%3BAlways%2BLearning" alt="Typing SVG" />
 </a>
 </h1>
 
@@ -10,34 +10,45 @@
 
 <div align="center">
 
+"Код — це мистецтво вирішення проблем."
 
+Я Full Stack розробник, який спеціалізується на створенні сучасних веб-додатків.
+Фокусуюсь на продуктивності, чистоті архітектури та користувацькому досвіді (UX).
 
+🔭 Current Focus: High-Load Systems & Modern Web Development
 
-"Код — це архітектура, яку не видно, але яку відчуває кожен користувач."
-
-Я займаюсь проектуванням складних систем. Від серверної логіки виживання у Garry's Mod до архітектури сучасних веб-додатків.
-Мій пріоритет — оптимізація, масштабованість та чистота коду.
-
-🔭 Current Focus: The Sector (Survival Mode) & High-Load Web Apps
+</div>
 
 ⚡ Технічний Арсенал
 
-<!-- Центровані іконки без зайвих підписів категорій для мінімалізму -->
+<!-- Центровані іконки, стиль "For the badge" (темний/мінімалістичний) -->
 
 <div align="center">
 
-<!-- Рядок 1: Game & Core -->
+<!-- Languages -->
 
+<h3>Languages</h3>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/JavaScript-%2523323330%3Fstyle%3Dfor-the-badge%26logo%3Djavascript%26logoColor%3D%2523F7DF1E" alt="JS"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/TypeScript-%2523007ACC%3Fstyle%3Dfor-the-badge%26logo%3Dtypescript%26logoColor%3Dwhite" alt="TS"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-%25233776AB%3Fstyle%3Dfor-the-badge%26logo%3Dpython%26logoColor%3Dwhite" alt="Python"/>
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/C%2B%2B-%252300599C%3Fstyle%3Dfor-the-badge%26logo%3Dc%252B%252B%26logoColor%3Dwhite" alt="Cpp"/>
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/Lua-%25232C2D72%3Fstyle%3Dfor-the-badge%26logo%3Dlua%26logoColor%3Dwhite" alt="Lua"/>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Godot-%2523478CBF%3Fstyle%3Dfor-the-badge%26logo%3Dgodot-engine%26logoColor%3Dwhite" alt="Godot"/>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Unreal-%2523313131%3Fstyle%3Dfor-the-badge%26logo%3Dunrealengine%26logoColor%3Dwhite" alt="UE5"/>
 
-<!-- Рядок 2: Web & Tools -->
+<!-- Frontend -->
 
+<h3>Frontend</h3>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/React-%252320232a.svg%3Fstyle%3Dfor-the-badge%26logo%3Dreact%26logoColor%3D%252361DAFB" alt="React"/>
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/Next.js-black%3Fstyle%3Dfor-the-badge%26logo%3Dnext.js%26logoColor%3Dwhite" alt="Next"/>
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/Tailwind-%252338B2AC%3Fstyle%3Dfor-the-badge%26logo%3Dtailwind-css%26logoColor%3Dwhite" alt="Tailwind"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/HTML5-%2523E34F26%3Fstyle%3Dfor-the-badge%26logo%3Dhtml5%26logoColor%3Dwhite" alt="HTML"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/CSS3-%25231572B6%3Fstyle%3Dfor-the-badge%26logo%3Dcss3%26logoColor%3Dwhite" alt="CSS"/>
+
+<!-- Backend & Tools -->
+
+<h3>Backend & Tools</h3>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Node.js-6DA55F%3Fstyle%3Dfor-the-badge%26logo%3Dnode.js%26logoColor%3Dwhite" alt="Node"/>
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/Docker-%25232496ED%3Fstyle%3Dfor-the-badge%26logo%3Ddocker%26logoColor%3Dwhite" alt="Docker"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Git-%2523F05032%3Fstyle%3Dfor-the-badge%26logo%3Dgit%26logoColor%3Dwhite" alt="Git"/>
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/Linux-%2523FCC624%3Fstyle%3Dfor-the-badge%26logo%3Dlinux%26logoColor%3Dblack" alt="Linux"/>
 
 </div>
@@ -52,7 +63,7 @@
 </a>
 </div>
 
-📊 System Metrics
+📊 GitHub Stats
 
 <!-- Статистика -->
 
