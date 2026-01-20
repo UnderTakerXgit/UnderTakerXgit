@@ -22,7 +22,7 @@
 
 ### 📬 Контакти
 Зв'яжіться зі мною:
-- [Telegram](https://t.me/ТВІЙ_НІК_ТЕЛЕГРАМ)
-- [Freelancehunt](ПОСИЛАННЯ_НА_ТВІЙ_ПРОФІЛЬ)
+- [Telegram](https://t.me/DeniSSgalicia)
+- [kabanchik](https://kabanchik.ua/ua/user/3866478)
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ТВІЙ_НІКНЕЙМ_GITHUB&show_icons=true&theme=dark)
