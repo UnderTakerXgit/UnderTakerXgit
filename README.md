@@ -70,16 +70,8 @@
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats-sigma-five.vercel.app/api?username=UnderTakerXgit&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=33CCFF&icon_color=33CCFF" alt="GitHub Stats" />
-<img height="180" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=UnderTakerXgit&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=33CCFF&langs_count=8" alt="Top Languages" />
-
-<br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com?user=UnderTakerXgit&theme=radical&hide_border=true&background=0d1117&ring=33CCFF&fire=33CCFF&currStreakLabel=33CCFF" alt="Streak" />
-
-<br/>
-
-<img width="85%" src="https://github-readme-activity-graph.vercel.app/graph?username=UnderTakerXgit&bg_color=0d1117&color=33CCFF&line=33CCFF&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
+<img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=UnderTakerXgit&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=33CCFF&icon_color=33CCFF" alt="GitHub Stats" />
+<img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=UnderTakerXgit&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=33CCFF&langs_count=6" alt="Top Languages" />
 
 </div>
 
