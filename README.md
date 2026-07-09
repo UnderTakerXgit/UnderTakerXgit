@@ -65,18 +65,8 @@
 
 </div>
 
-<!-- ============ ANALYTICS ============ -->
-### 📊 GitHub Analytics
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=UnderTakerXgit&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=33CCFF&icon_color=33CCFF" alt="GitHub Stats" />
-<img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=UnderTakerXgit&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=33CCFF&langs_count=6" alt="Top Languages" />
-
-</div>
-
 <!-- ============ CONTACT ============ -->
-### 📫 Зв'язок
+### 📫 Зв'язок / Contact
 
 <div align="center">
 
