@@ -15,14 +15,16 @@
 </div>
 
 <!-- ============ ABOUT ============ -->
-### 🚀 Про мене
+### 🚀 Про мене / About me
 
-Розробляю **enterprise-рішення** з фокусом на **масштабованість**, **безпеку** та **чистоту коду**. Перетворюю складні бізнес-вимоги на надійні технічні системи.
+🇺🇦 Розробляю **enterprise-рішення** з фокусом на **масштабованість**, **безпеку** та **чистоту коду**. Перетворюю складні бізнес-вимоги на надійні технічні системи.
+
+🇬🇧 I build **enterprise-grade solutions** focused on **scalability**, **security** and **clean code** — turning complex business requirements into reliable technical systems.
 
 - 🔭 **Focus:** Cloud-Native Architecture • Microservices • High-Performance Computing
-- 🏢 **Company:** [@Rephyx-tech](https://github.com/Rephyx-tech) • [rephyx.tech](https://rephyx.tech/)
-- 🌱 **Постійно вдосконалюю:** DevOps практики та розподілені системи
-- 💬 **Пишіть нам:** [Telegram-бот @Rephyxtechbot](https://t.me/Rephyxtechbot)
+- 🏢 **Company / Компанія:** [@Rephyx-tech](https://github.com/Rephyx-tech) • [rephyx.tech](https://rephyx.tech/)
+- 🌱 **Learning / Вивчаю:** DevOps practices & distributed systems
+- 💬 **Contact / Зв'язок:** [Telegram @Rephyxtechbot](https://t.me/Rephyxtechbot)
 
 <!-- ============ TECH STACK ============ -->
 ### 🛠 Technology Stack
@@ -68,16 +70,16 @@
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=UnderTakerXgit&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=33CCFF&icon_color=33CCFF" alt="GitHub Stats" />
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=UnderTakerXgit&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=33CCFF&langs_count=8" alt="Top Languages" />
+<img height="180" src="https://github-readme-stats-sigma-five.vercel.app/api?username=UnderTakerXgit&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=33CCFF&icon_color=33CCFF" alt="GitHub Stats" />
+<img height="180" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=UnderTakerXgit&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=33CCFF&langs_count=8" alt="Top Languages" />
 
 <br/>
 
-<img src="https://streak-stats.demolab.com?user=UnderTakerXgit&theme=radical&hide_border=true&background=0d1117&ring=33CCFF&fire=33CCFF&currStreakLabel=33CCFF" alt="Streak" />
+<img src="https://github-readme-streak-stats.herokuapp.com?user=UnderTakerXgit&theme=radical&hide_border=true&background=0d1117&ring=33CCFF&fire=33CCFF&currStreakLabel=33CCFF" alt="Streak" />
 
 <br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=UnderTakerXgit&theme=radical&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8" alt="Trophies" />
+<img width="85%" src="https://github-readme-activity-graph.vercel.app/graph?username=UnderTakerXgit&bg_color=0d1117&color=33CCFF&line=33CCFF&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
 
 </div>
 
