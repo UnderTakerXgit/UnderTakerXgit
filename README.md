@@ -65,6 +65,43 @@
 
 </div>
 
+<!-- ============ PROJECTS ============ -->
+### 💼 Проєкти / Projects
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>🌐 <a href="https://rephyx.tech/">Rephyx-tech</a></h4>
+      🇺🇦 Студія розробки цифрових продуктів — веб, мобільні застосунки, бекенди та автоматизація.<br/>
+      🇬🇧 Digital product studio — web, mobile apps, backends and automation.<br/><br/>
+      <code>Astro</code> <code>Tailwind</code> <code>Node.js</code>
+      <br/><br/>
+      <a href="https://rephyx.tech/"><img src="https://img.shields.io/badge/Live-rephyx.tech-33CCFF?style=flat-square&logo=google-chrome&logoColor=white" alt="Live"/></a>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🧒 <a href="https://topkids.in.ua/">TopKids</a></h4>
+      🇺🇦 Каталог-довідник дитячих активностей: гуртки, репетитори, секції.<br/>
+      🇬🇧 Directory of kids' activities: clubs, tutors, sport sections.<br/><br/>
+      <code>Next.js</code> <code>Fastify</code> <code>Prisma</code> <code>MySQL</code> <code>Flutter</code>
+      <br/><br/>
+      <a href="https://topkids.in.ua/"><img src="https://img.shields.io/badge/Live-topkids.in.ua-33CCFF?style=flat-square&logo=google-chrome&logoColor=white" alt="Live"/></a>
+    </td>
+  </tr>
+</table>
+
+<!-- ============ SNAKE ============ -->
+### 🐍 Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/UnderTakerXgit/UnderTakerXgit/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/UnderTakerXgit/UnderTakerXgit/output/github-snake.svg" />
+  <img alt="github contribution snake animation" src="https://raw.githubusercontent.com/UnderTakerXgit/UnderTakerXgit/output/github-snake.svg" />
+</picture>
+
+</div>
+
 <!-- ============ CONTACT ============ -->
 ### 📫 Зв'язок / Contact
 
