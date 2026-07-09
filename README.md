@@ -20,9 +20,9 @@
 Розробляю **enterprise-рішення** з фокусом на **масштабованість**, **безпеку** та **чистоту коду**. Перетворюю складні бізнес-вимоги на надійні технічні системи.
 
 - 🔭 **Focus:** Cloud-Native Architecture • Microservices • High-Performance Computing
-- 🏢 **Company:** [@Rephyx-tech](https://github.com/Rephyx-tech)
+- 🏢 **Company:** [@Rephyx-tech](https://github.com/Rephyx-tech) • [rephyx.tech](https://rephyx.tech/)
 - 🌱 **Постійно вдосконалюю:** DevOps практики та розподілені системи
-- 💬 **Пишіть мені:** [Telegram](https://t.me/DeniSSgalicia)
+- 💬 **Пишіть нам:** [Telegram-бот @Rephyxtechbot](https://t.me/Rephyxtechbot)
 
 <!-- ============ TECH STACK ============ -->
 ### 🛠 Technology Stack
@@ -86,11 +86,11 @@
 
 <div align="center">
 
-<a href="https://t.me/DeniSSgalicia" target="_blank">
-  <img src="https://img.shields.io/badge/Telegram-Напишіть_мені-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
+<a href="https://t.me/Rephyxtechbot" target="_blank">
+  <img src="https://img.shields.io/badge/Telegram-%40Rephyxtechbot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
 </a>
-<a href="https://kabanchik.ua/ua/user/3866478" target="_blank">
-  <img src="https://img.shields.io/badge/Kabanchik-Hire_Me-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="Kabanchik"/>
+<a href="https://rephyx.tech/" target="_blank">
+  <img src="https://img.shields.io/badge/Website-rephyx.tech-33CCFF?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"/>
 </a>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:33CCFF&height=120&section=footer" width="100%" alt="footer"/>
