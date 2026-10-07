@@ -1,0 +1,14 @@
+{
+  "name": "sc-academie-landing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Landing page prototype for SC Académie (HAT stack: HTMX + Alpine.js + Tailwind CSS)",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "serve": "npx http-server . -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

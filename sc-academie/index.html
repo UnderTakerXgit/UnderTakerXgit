@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SC Académie — французский для жизни во Франции</title>
+  <meta name="description" content="Онлайн-школа французского языка для русскоговорящих во Франции: быт, работа, документы, DELF/TCF и натурализация. Бесплатный пробный урок." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/styles.css" />
+
+  <!-- HAT stack: HTMX + Alpine.js (+ Tailwind, собранный в dist/styles.css) -->
+  <script src="https://unpkg.com/htmx.org@2.0.4" defer></script>
+  <script src="https://unpkg.com/alpinejs@3.14.8/dist/cdn.min.js" defer></script>
+</head>
+
+<body x-data="{ menu: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 20">
+
+  <!-- ================= HEADER ================= -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+          :class="scrolled ? 'bg-creme/90 shadow-sm backdrop-blur-md' : 'bg-transparent'">
+    <div class="container-x flex h-16 items-center justify-between sm:h-20">
+      <a href="#top" class="flex items-center gap-2.5">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-ink font-display text-lg font-bold text-white">SC</span>
+        <span class="font-display text-2xl font-semibold tracking-tight">Académie</span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-ink/70 lg:flex">
+        <a href="#programs" class="hover:text-ink">Программы</a>
+        <a href="#how" class="hover:text-ink">Как учимся</a>
+        <a href="#teachers" class="hover:text-ink">Преподаватели</a>
+        <a href="#pricing" class="hover:text-ink">Цены</a>
+        <a href="#faq" class="hover:text-ink">Вопросы</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#lead" class="btn-primary hidden sm:inline-flex">Пробный урок</a>
+        <button class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 lg:hidden"
+                @click="menu = !menu" :aria-expanded="menu" aria-label="Меню">
+          <svg x-show="!menu" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg x-show="menu" x-cloak class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div x-show="menu" x-cloak x-transition.opacity @click.outside="menu = false"
+         class="border-t border-ink/10 bg-creme lg:hidden">
+      <nav class="container-x flex flex-col gap-1 py-4 text-base font-semibold" @click="menu = false">
+        <a href="#programs" class="rounded-xl px-3 py-3 hover:bg-sable">Программы</a>
+        <a href="#how" class="rounded-xl px-3 py-3 hover:bg-sable">Как учимся</a>
+        <a href="#teachers" class="rounded-xl px-3 py-3 hover:bg-sable">Преподаватели</a>
+        <a href="#pricing" class="rounded-xl px-3 py-3 hover:bg-sable">Цены</a>
+        <a href="#faq" class="rounded-xl px-3 py-3 hover:bg-sable">Вопросы</a>
+        <a href="#lead" class="btn-primary mt-2">Записаться на пробный урок</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="relative overflow-clip pb-20 pt-32 sm:pt-40">
+      <!-- декоративный фон: французский триколор, размытый -->
+      <div class="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-bleu-500/15 blur-3xl"></div>
+      <div class="pointer-events-none absolute -right-24 top-40 h-96 w-96 rounded-full bg-rouge-500/15 blur-3xl"></div>
+
+      <div class="container-x relative grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold shadow-soft">
+            <span class="flex h-2 overflow-hidden rounded-full"><i class="block w-2 bg-bleu-500"></i><i class="block w-2 bg-white ring-1 ring-ink/10"></i><i class="block w-2 bg-rouge-500"></i></span>
+            Онлайн-школа для русскоговорящих во Франции
+          </span>
+
+          <h1 class="mt-6 font-display text-5xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
+            Французский, на котором
+            <em class="relative whitespace-nowrap text-bleu-600">
+              вы живёте
+              <svg class="absolute -bottom-2 left-0 w-full text-rouge-500" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none"><path d="M2 9c60-6 180-8 296-3" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+            </em>,
+            а не учите годами
+          </h1>
+
+          <p class="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
+            Говорите уверенно у врача, в префектуре, с коллегами и соседями. Живые уроки с преподавателями,
+            которые сами прошли путь интеграции во Франции, — по программе под ваши реальные задачи.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#lead" class="btn-primary whitespace-nowrap text-base">
+              Бесплатный пробный урок
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#quiz" class="btn-ghost whitespace-nowrap text-base">Узнать свой уровень за 1 минуту</a>
+          </div>
+
+          <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-ink/10 pt-8">
+            <div><dt class="text-xs text-ink/50">учеников</dt><dd class="font-display text-4xl font-bold">1 200+</dd></div>
+            <div><dt class="text-xs text-ink/50">сдали DELF / TCF</dt><dd class="font-display text-4xl font-bold">94%</dd></div>
+            <div><dt class="text-xs text-ink/50">рейтинг</dt><dd class="font-display text-4xl font-bold">4.9★</dd></div>
+          </dl>
+        </div>
+
+        <!-- визуал: «окно урока» -->
+        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div class="relative rotate-1 rounded-[2rem] bg-ink p-6 text-white shadow-2xl sm:p-8">
+            <div class="flex items-center justify-between text-xs text-white/60">
+              <span class="flex items-center gap-2"><span class="h-2 w-2 animate-pulse rounded-full bg-rouge-400"></span> Урок идёт · 32:14</span>
+              <span>Уровень A2 → B1</span>
+            </div>
+            <p class="mt-6 font-display text-3xl italic leading-snug">
+              «Bonjour, je voudrais prendre rendez-vous avec le médecin traitant…»
+            </p>
+            <p class="mt-3 text-sm text-white/60">Тема: запись к врачу и разговор по телефону</p>
+
+            <div class="mt-7 grid grid-cols-2 gap-3 text-sm">
+              <div class="rounded-2xl bg-white/10 p-4">
+                <p class="text-white/60">Новые слова</p>
+                <p class="mt-1 text-2xl font-bold">+24</p>
+              </div>
+              <div class="rounded-2xl bg-white/10 p-4">
+                <p class="text-white/60">Разговорная практика</p>
+                <p class="mt-1 text-2xl font-bold">70%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-8 -left-4 w-60 -rotate-3 rounded-2xl bg-white p-4 shadow-soft sm:-left-10">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-bleu-100 font-bold text-bleu-700">ОК</span>
+              <div>
+                <p class="text-sm font-bold">Ольга, Лион</p>
+                <p class="text-xs text-ink/50">прошла собеседование на французском</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -right-2 -top-6 rotate-6 rounded-2xl bg-rouge-500 px-4 py-3 text-sm font-bold text-white shadow-lg sm:-right-6">
+            🇫🇷 Titre de séjour ✓
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAINS ================= -->
+    <section class="section bg-white">
+      <div class="container-x">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Знакомо?</p>
+          <h2 class="h2 mt-3">Вы живёте во Франции, но французский всё ещё мешает жить</h2>
+        </div>
+
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <template x-for="p in [
+            { i: '🏛️', t: 'Префектура и документы', d: 'Письма из CAF, impôts и préfecture читаете через переводчик и боитесь ошибиться.' },
+            { i: '🩺', t: 'Врач и аптека', d: 'Трудно объяснить симптомы, а по телефону вообще не получается записаться.' },
+            { i: '💼', t: 'Работа и карьера', d: 'Опыт и диплом есть, но собеседования и общение с коллегами даются тяжело.' },
+            { i: '🤐', t: 'Страх говорить', d: 'Понимаете многое, но в разговоре замираете и переходите на английский.' },
+          ]">
+            <div class="rounded-3xl border border-ink/10 bg-creme p-7 transition hover:-translate-y-1 hover:shadow-soft">
+              <span class="text-3xl" x-text="p.i"></span>
+              <h3 class="mt-5 text-lg font-bold" x-text="p.t"></h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink/65" x-text="p.d"></p>
+            </div>
+          </template>
+        </div>
+
+        <p class="mt-12 max-w-3xl font-display text-3xl italic leading-snug text-ink/80">
+          В SC Académie мы учим не «французскому вообще», а тому языку, который нужен
+          <span class="text-rouge-500">именно вам — здесь и сейчас.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAMS (Alpine tabs) ================= -->
+    <section id="programs" class="section" x-data="{ tab: 'life' }">
+      <div class="container-x">
+        <div class="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
+          <div class="max-w-xl">
+            <p class="eyebrow">Программы</p>
+            <h2 class="h2 mt-3">Выберите цель — мы соберём под неё курс</h2>
+          </div>
+          <div class="flex flex-wrap gap-2 rounded-full bg-white p-1.5 shadow-soft" role="tablist">
+            <button role="tab" @click="tab='life'" :class="tab==='life' ? 'bg-ink text-white' : 'text-ink/60 hover:text-ink'" class="rounded-full px-5 py-2.5 text-sm font-bold transition">Повседневная жизнь</button>
+            <button role="tab" @click="tab='work'" :class="tab==='work' ? 'bg-ink text-white' : 'text-ink/60 hover:text-ink'" class="rounded-full px-5 py-2.5 text-sm font-bold transition">Работа</button>
+            <button role="tab" @click="tab='exam'" :class="tab==='exam' ? 'bg-ink text-white' : 'text-ink/60 hover:text-ink'" class="rounded-full px-5 py-2.5 text-sm font-bold transition">Интеграция и экзамены</button>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <!-- LIFE -->
+          <div x-show="tab==='life'" x-transition.opacity class="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+            <div class="card">
+              <p class="text-sm font-bold text-bleu-600">A0 → B1 · от 3 месяцев</p>
+              <h3 class="mt-3 font-display text-4xl font-semibold">Français pour la vie</h3>
+              <p class="mt-4 leading-relaxed text-ink/70">Язык ежедневных ситуаций: от булочной и школы детей до разговора с арендодателем. Много живой речи, ролевых игр и реальных документов.</p>
+              <ul class="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Врач, аптека, Ameli</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> CAF, банк, налоги</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Школа и родительские собрания</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Звонки и письма</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl bg-bleu-600 p-7 text-white">
+              <p class="text-sm text-white/70">Результат через 3 месяца</p>
+              <p class="mt-4 font-display text-3xl italic leading-snug">«Я сама позвонила в mairie и записала ребёнка в школу. Без мужа и без Google Translate!»</p>
+              <p class="mt-6 text-sm font-bold">— Анна, Бордо</p>
+            </div>
+          </div>
+
+          <!-- WORK -->
+          <div x-show="tab==='work'" x-cloak x-transition.opacity class="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+            <div class="card">
+              <p class="text-sm font-bold text-bleu-600">A2 → B2 · от 4 месяцев</p>
+              <h3 class="mt-3 font-display text-4xl font-semibold">Français professionnel</h3>
+              <p class="mt-4 leading-relaxed text-ink/70">Для тех, кто ищет работу, подтверждает диплом или хочет расти в карьере. Резюме, собеседования, деловая переписка и small talk с коллегами.</p>
+              <ul class="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> CV и lettre de motivation</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Симуляции собеседований</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Деловые письма и звонки</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> France Travail и стажировки</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl bg-ink p-7 text-white">
+              <p class="text-sm text-white/70">Результат</p>
+              <p class="mt-4 font-display text-3xl italic leading-snug">«Через 4 месяца прошла три собеседования и получила CDI в логистической компании».</p>
+              <p class="mt-6 text-sm font-bold">— Марина, Тулуза</p>
+            </div>
+          </div>
+
+          <!-- EXAM -->
+          <div x-show="tab==='exam'" x-cloak x-transition.opacity class="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+            <div class="card">
+              <p class="text-sm font-bold text-bleu-600">A2 / B1 / B2 · интенсив 8–12 недель</p>
+              <h3 class="mt-3 font-display text-4xl font-semibold">DELF, TCF и натурализация</h3>
+              <p class="mt-4 leading-relaxed text-ink/70">Подготовка к экзаменам для carte de résident и гражданства. Пробные тесты в формате экзамена, разбор каждой части и тренировка устного интервью.</p>
+              <ul class="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> TCF IRN / TCF ANF</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> DELF A2 · B1 · B2</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Entretien d'assimilation</li>
+                <li class="flex gap-2"><span class="text-rouge-500">✦</span> Пробные экзамены</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl bg-rouge-500 p-7 text-white">
+              <p class="text-sm text-white/80">Статистика</p>
+              <p class="mt-4 font-display text-7xl font-bold">94%</p>
+              <p class="mt-2 text-lg">учеников сдают экзамен с первой попытки</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ (Alpine) ================= -->
+    <section id="quiz" class="section bg-sable/60"
+             x-data="{
+               step: 0,
+               score: 0,
+               qs: [
+                 { q: 'Как вежливо попросить счёт в кафе?', a: ['Donne-moi l\'argent', 'L\'addition, s\'il vous plaît', 'Je veux payer maintenant toi'], ok: 1 },
+                 { q: 'Выберите правильный вариант: «Я живу во Франции 3 года»', a: ['J\'habite en France depuis 3 ans', 'J\'habite à France pour 3 ans', 'Je vis dans France il y a 3 ans'], ok: 0 },
+                 { q: '«Si j\'avais le temps, je … plus de français»', a: ['ferai', 'fais', 'ferais'], ok: 2 },
+               ],
+               pick(i) { if (i === this.qs[this.step].ok) this.score++; this.step++ },
+               get level() { return ['A0–A1', 'A1–A2', 'A2–B1', 'B1+'][this.score] },
+               reset() { this.step = 0; this.score = 0 }
+             }">
+      <div class="container-x grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <p class="eyebrow">Мини-тест</p>
+          <h2 class="h2 mt-3">Узнайте свой уровень за 1 минуту</h2>
+          <p class="mt-5 max-w-md text-ink/70">Три вопроса — и мы подскажем, с какой программы начать. Точный уровень преподаватель определит на бесплатном пробном уроке.</p>
+        </div>
+
+        <div class="card">
+          <template x-if="step < qs.length">
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold text-ink/50">
+                <span x-text="`Вопрос ${step + 1} из ${qs.length}`"></span>
+                <div class="flex gap-1.5">
+                  <template x-for="(q, i) in qs"><span class="h-1.5 w-8 rounded-full" :class="i <= step ? 'bg-bleu-500' : 'bg-ink/10'"></span></template>
+                </div>
+              </div>
+              <p class="mt-6 text-xl font-bold" x-text="qs[step].q"></p>
+              <div class="mt-6 grid gap-3">
+                <template x-for="(a, i) in qs[step].a" :key="step + '-' + i">
+                  <button @click="pick(i)" class="rounded-2xl border border-ink/10 px-5 py-4 text-left font-semibold transition hover:border-bleu-500 hover:bg-bleu-50" x-text="a"></button>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <template x-if="step >= qs.length">
+            <div class="text-center">
+              <p class="text-sm font-bold text-ink/50">Ваш ориентировочный уровень</p>
+              <p class="mt-3 font-display text-7xl font-bold text-bleu-600" x-text="level"></p>
+              <p class="mt-4 text-ink/70">Отличная точка старта! На пробном уроке составим персональный план.</p>
+              <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+                <a href="#lead" class="btn-primary" @click="$dispatch('quiz-level', level)">Получить план обучения</a>
+                <button class="btn-ghost" @click="reset()">Пройти ещё раз</button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how" class="section">
+      <div class="container-x">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="eyebrow">Как проходит обучение</p>
+          <h2 class="h2 mt-3">Четыре шага от «je ne comprends pas» до свободной речи</h2>
+        </div>
+
+        <ol class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <li class="relative card">
+            <span class="font-display text-6xl font-bold text-bleu-100">01</span>
+            <h3 class="mt-2 text-lg font-bold">Пробный урок</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/65">Бесплатно определяем уровень, цели и удобный формат.</p>
+          </li>
+          <li class="relative card">
+            <span class="font-display text-6xl font-bold text-bleu-100">02</span>
+            <h3 class="mt-2 text-lg font-bold">Личный план</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/65">Программа под ваши ситуации: работа, документы, дети, экзамен.</p>
+          </li>
+          <li class="relative card">
+            <span class="font-display text-6xl font-bold text-bleu-100">03</span>
+            <h3 class="mt-2 text-lg font-bold">Живые уроки</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/65">Zoom-занятия в мини-группе или индивидуально + домашние задания на платформе.</p>
+          </li>
+          <li class="relative card">
+            <span class="font-display text-6xl font-bold text-bleu-100">04</span>
+            <h3 class="mt-2 text-lg font-bold">Практика в жизни</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/65">Разговорные клубы, «миссии» в реальной жизни и проверка прогресса каждый месяц.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ADVANTAGES (dark) ================= -->
+    <section class="section bg-ink text-white">
+      <div class="container-x grid gap-14 lg:grid-cols-[1fr_1.4fr]">
+        <div>
+          <p class="eyebrow text-rouge-400">Почему SC Académie</p>
+          <h2 class="h2 mt-3">Школа, которая понимает вашу ситуацию изнутри</h2>
+          <p class="mt-6 text-white/65">Наши преподаватели — носители и русскоговорящие эксперты, которые сами переезжали, проходили префектуру и строили карьеру во Франции.</p>
+        </div>
+        <div class="grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2">
+          <div class="bg-ink p-7"><p class="text-2xl">🎯</p><h3 class="mt-4 font-bold">Фокус на реальной жизни</h3><p class="mt-2 text-sm text-white/60">Только то, что пригодится во Франции уже завтра.</p></div>
+          <div class="bg-ink p-7"><p class="text-2xl">🗣️</p><h3 class="mt-4 font-bold">70% разговорной практики</h3><p class="mt-2 text-sm text-white/60">Снимаем языковой барьер с первого урока.</p></div>
+          <div class="bg-ink p-7"><p class="text-2xl">🇷🇺</p><h3 class="mt-4 font-bold">Объясняем по-русски</h3><p class="mt-2 text-sm text-white/60">Сложную грамматику — на родном языке, практику — на французском.</p></div>
+          <div class="bg-ink p-7"><p class="text-2xl">🕒</p><h3 class="mt-4 font-bold">Гибкое расписание</h3><p class="mt-2 text-sm text-white/60">Утренние, вечерние и субботние группы по времени Парижа.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEACHERS ================= -->
+    <section id="teachers" class="section">
+      <div class="container-x">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Преподаватели</p>
+          <h2 class="h2 mt-3">Команда, с которой не страшно говорить</h2>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="card group">
+            <div class="grid aspect-[4/3] place-items-center rounded-2xl bg-gradient-to-br from-bleu-100 to-bleu-50 font-display text-6xl font-bold text-bleu-600 transition group-hover:scale-[1.02]">SC</div>
+            <h3 class="mt-6 text-xl font-bold">Софи Каре</h3>
+            <p class="text-sm font-semibold text-rouge-500">Основатель · носитель языка</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/65">Экзаменатор DELF/DALF, 12 лет преподавания FLE взрослым мигрантам.</p>
+          </article>
+          <article class="card group">
+            <div class="grid aspect-[4/3] place-items-center rounded-2xl bg-gradient-to-br from-rouge-400/20 to-sable font-display text-6xl font-bold text-rouge-600 transition group-hover:scale-[1.02]">ЕМ</div>
+            <h3 class="mt-6 text-xl font-bold">Елена Морель</h3>
+            <p class="text-sm font-semibold text-rouge-500">Методист · франкофон</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/65">Живёт в Париже 15 лет, магистр Sorbonne Nouvelle по FLE.</p>
+          </article>
+          <article class="card group">
+            <div class="grid aspect-[4/3] place-items-center rounded-2xl bg-gradient-to-br from-ink/10 to-creme font-display text-6xl font-bold text-ink transition group-hover:scale-[1.02]">ЛД</div>
+            <h3 class="mt-6 text-xl font-bold">Люк Дюбуа</h3>
+            <p class="text-sm font-semibold text-rouge-500">Бизнес-французский</p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/65">Бывший HR-менеджер, готовит к собеседованиям и деловому общению.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS (HTMX lazy load) ================= -->
+    <section id="reviews" class="section bg-white">
+      <div class="container-x">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Отзывы</p>
+            <h2 class="h2 mt-3">Истории наших учеников</h2>
+          </div>
+          <p class="text-sm text-ink/60"><span class="font-bold text-ink">4.9 из 5</span> · 380+ отзывов</p>
+        </div>
+
+        <!-- Отзывы подгружаются через HTMX, когда блок появляется на экране -->
+        <div id="reviews-list" class="mt-12 grid gap-6 md:grid-cols-3"
+             hx-get="partials/reviews.html" hx-trigger="revealed" hx-swap="innerHTML">
+          <div class="h-56 animate-pulse rounded-3xl bg-creme"></div>
+          <div class="h-56 animate-pulse rounded-3xl bg-creme"></div>
+          <div class="h-56 animate-pulse rounded-3xl bg-creme"></div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <button class="btn-ghost" hx-get="partials/reviews-more.html" hx-target="#reviews-list" hx-swap="beforeend"
+                  hx-on::after-request="this.remove()">
+            <span class="btn-label">Показать ещё отзывы</span>
+            <span class="htmx-indicator">Загружаем…</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING (Alpine toggle) ================= -->
+    <section id="pricing" class="section" x-data="{ yearly: false }">
+      <div class="container-x">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="eyebrow">Стоимость</p>
+          <h2 class="h2 mt-3">Прозрачные цены без скрытых платежей</h2>
+          <div class="mt-8 inline-flex items-center gap-3 rounded-full bg-white p-1.5 text-sm font-bold shadow-soft">
+            <button @click="yearly=false" :class="!yearly ? 'bg-ink text-white' : 'text-ink/60'" class="rounded-full px-5 py-2 transition">Помесячно</button>
+            <button @click="yearly=true" :class="yearly ? 'bg-ink text-white' : 'text-ink/60'" class="rounded-full px-5 py-2 transition">Пакет 3 мес. <span class="ml-1 rounded-full bg-rouge-500 px-2 py-0.5 text-[10px] text-white">−15%</span></button>
+          </div>
+        </div>
+
+        <div class="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
+          <div class="card flex flex-col">
+            <h3 class="text-lg font-bold">Мини-группа</h3>
+            <p class="mt-1 text-sm text-ink/60">4–6 человек, 2 урока в неделю</p>
+            <p class="mt-6 font-display text-5xl font-bold"><span x-text="yearly ? '135' : '159'"></span> €<span class="font-sans text-base font-medium text-ink/50"> / мес</span></p>
+            <ul class="mt-7 flex-1 space-y-3 text-sm">
+              <li class="flex gap-2"><span class="text-bleu-500">✓</span> 8 живых уроков по 75 минут</li>
+              <li class="flex gap-2"><span class="text-bleu-500">✓</span> Домашние задания с проверкой</li>
+              <li class="flex gap-2"><span class="text-bleu-500">✓</span> Разговорный клуб раз в неделю</li>
+            </ul>
+            <a href="#lead" class="btn-ghost mt-8">Выбрать</a>
+          </div>
+
+          <div class="relative flex flex-col rounded-3xl bg-ink p-7 text-white shadow-2xl lg:-my-4 lg:py-11">
+            <span class="absolute -top-3 left-7 rounded-full bg-rouge-500 px-3 py-1 text-xs font-bold">Популярный</span>
+            <h3 class="text-lg font-bold">Интенсив</h3>
+            <p class="mt-1 text-sm text-white/60">Мини-группа + индивидуальные уроки</p>
+            <p class="mt-6 font-display text-5xl font-bold"><span x-text="yearly ? '254' : '299'"></span> €<span class="font-sans text-base font-medium text-white/50"> / мес</span></p>
+            <ul class="mt-7 flex-1 space-y-3 text-sm text-white/85">
+              <li class="flex gap-2"><span class="text-rouge-400">✓</span> Всё из тарифа «Мини-группа»</li>
+              <li class="flex gap-2"><span class="text-rouge-400">✓</span> 4 индивидуальных урока</li>
+              <li class="flex gap-2"><span class="text-rouge-400">✓</span> Помощь с письмами и документами</li>
+              <li class="flex gap-2"><span class="text-rouge-400">✓</span> Личный куратор в Telegram</li>
+            </ul>
+            <a href="#lead" class="btn-primary mt-8">Выбрать</a>
+          </div>
+
+          <div class="card flex flex-col">
+            <h3 class="text-lg font-bold">Индивидуально</h3>
+            <p class="mt-1 text-sm text-ink/60">Персональный преподаватель</p>
+            <p class="mt-6 font-display text-5xl font-bold"><span x-text="yearly ? '38' : '45'"></span> €<span class="font-sans text-base font-medium text-ink/50"> / урок</span></p>
+            <ul class="mt-7 flex-1 space-y-3 text-sm">
+              <li class="flex gap-2"><span class="text-bleu-500">✓</span> Полностью гибкий график</li>
+              <li class="flex gap-2"><span class="text-bleu-500">✓</span> Программа под вашу цель</li>
+              <li class="flex gap-2"><span class="text-bleu-500">✓</span> Подготовка к экзамену / собеседованию</li>
+            </ul>
+            <a href="#lead" class="btn-ghost mt-8">Выбрать</a>
+          </div>
+        </div>
+        <p class="mt-10 text-center text-sm text-ink/50">Возможна оплата через CPF и рассрочка. Цены указаны для примера.</p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ (Alpine accordion) ================= -->
+    <section id="faq" class="section bg-white" x-data="{ open: 0 }">
+      <div class="container-x grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="h2 mt-3">Частые вопросы</h2>
+          <p class="mt-5 text-ink/65">Не нашли ответ? Напишите нам в <a href="#" class="font-bold text-bleu-600 underline-offset-4 hover:underline">Telegram</a> — отвечаем за 15 минут.</p>
+        </div>
+        <div class="divide-y divide-ink/10 border-y border-ink/10">
+          <template x-for="(f, i) in [
+            { q: 'Я совсем не знаю французский. Мне подойдёт?', a: 'Да. У нас есть группы с нуля (A0), где сложные темы объясняются по-русски, а практика постепенно переходит на французский.' },
+            { q: 'Подходит ли курс для подготовки к натурализации?', a: 'Да, программа «Интеграция и экзамены» готовит к TCF IRN/ANF и DELF B1/B2, а также к интервью в префектуре.' },
+            { q: 'Можно ли оплатить через CPF?', a: 'Да, часть программ можно оплатить из Compte Personnel de Formation. Куратор поможет с оформлением.' },
+            { q: 'Что если я пропущу урок?', a: 'Все групповые уроки записываются. Индивидуальные можно перенести, предупредив за 24 часа.' },
+            { q: 'Как проходит пробный урок?', a: '30 минут в Zoom с преподавателем: определяем уровень, обсуждаем цели и подбираем формат. Это бесплатно и ни к чему не обязывает.' },
+          ]">
+            <div>
+              <button class="flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-bold" @click="open = open === i ? null : i" :aria-expanded="open === i">
+                <span x-text="f.q"></span>
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-ink/15 transition" :class="open === i && 'rotate-45 bg-ink text-white'">+</span>
+              </button>
+              <div x-show="open === i" x-transition.opacity>
+                <p class="pb-6 pr-12 leading-relaxed text-ink/65" x-text="f.a"></p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LEAD FORM (HTMX) ================= -->
+    <section id="lead" class="section">
+      <div class="container-x">
+        <div class="relative overflow-clip rounded-[2.5rem] bg-bleu-600 px-6 py-14 text-white sm:px-14 sm:py-20">
+          <div class="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-rouge-500/40 blur-3xl"></div>
+          <div class="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+
+          <div class="relative grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <p class="eyebrow text-white/80">Первый шаг</p>
+              <h2 class="mt-3 font-display text-4xl font-semibold leading-tight sm:text-6xl">Запишитесь на бесплатный пробный урок</h2>
+              <ul class="mt-8 space-y-3 text-white/85">
+                <li class="flex gap-3"><span>✓</span> Определим ваш уровень</li>
+                <li class="flex gap-3"><span>✓</span> Составим план под вашу цель</li>
+                <li class="flex gap-3"><span>✓</span> Подарим гайд «50 фраз для префектуры»</li>
+              </ul>
+            </div>
+
+            <!-- Форма отправляется через HTMX; ответ сервера (partial) заменяет форму.
+                 В прототипе используется статический partial — подключите реальный endpoint. -->
+            <form class="rounded-3xl bg-white p-6 text-ink shadow-2xl sm:p-8"
+                  x-data="{ level: '' }" @quiz-level.window="level = $event.detail"
+                  hx-get="partials/form-success.html" hx-target="this" hx-swap="outerHTML">
+              <div class="grid gap-4">
+                <label class="grid gap-1.5 text-sm font-semibold">Имя
+                  <input class="input" name="name" required placeholder="Как к вам обращаться" />
+                </label>
+                <label class="grid gap-1.5 text-sm font-semibold">Телефон или Telegram
+                  <input class="input" name="contact" required placeholder="+33 6 00 00 00 00 / @username" />
+                </label>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <label class="grid gap-1.5 text-sm font-semibold">Цель
+                    <select class="input" name="goal">
+                      <option>Повседневная жизнь</option>
+                      <option>Работа</option>
+                      <option>Экзамен / натурализация</option>
+                    </select>
+                  </label>
+                  <label class="grid gap-1.5 text-sm font-semibold">Уровень
+                    <select class="input" name="level" x-model="level">
+                      <option value="">Не знаю</option>
+                      <option>A0–A1</option>
+                      <option>A1–A2</option>
+                      <option>A2–B1</option>
+                      <option>B1+</option>
+                    </select>
+                  </label>
+                </div>
+                <button type="submit" class="btn-primary mt-2 w-full py-4 text-base">
+                  <span class="btn-label">Записаться бесплатно</span>
+                  <span class="htmx-indicator">Отправляем…</span>
+                </button>
+                <p class="text-center text-xs text-ink/45">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности (RGPD).</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-ink/10 py-12">
+    <div class="container-x flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-ink font-display text-lg font-bold text-white">SC</span>
+        <div>
+          <p class="font-display text-xl font-semibold">SC Académie</p>
+          <p class="text-xs text-ink/50">Онлайн-школа французского языка · Paris</p>
+        </div>
+      </div>
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-ink/60">
+        <a href="#" class="hover:text-ink">Telegram</a>
+        <a href="#" class="hover:text-ink">Instagram</a>
+        <a href="#" class="hover:text-ink">WhatsApp</a>
+        <a href="#" class="hover:text-ink">Mentions légales</a>
+      </nav>
+      <p class="text-xs text-ink/40">© 2026 SC Académie</p>
+    </div>
+  </footer>
+
+  <!-- Плавающая кнопка на мобильных -->
+  <a href="#lead" x-show="scrolled" x-cloak x-transition
+     class="btn-primary fixed inset-x-4 bottom-4 z-40 sm:hidden">Бесплатный пробный урок</a>
+</body>
+</html>
